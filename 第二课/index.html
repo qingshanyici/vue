@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>表格增删改查</title>
+    <link rel="stylesheet" href='./index.css' />
 </head>
 <body>
     <div id="table">
         <div class="add">
-            <input type="text" placeholder="标题" v-model="title"/>
-            <input type="text" placeholder="发布人" v-model="user"/>
-            <input type="text" placeholder="日期" v-model="data"/>
+            <input type="text" placeholder="标题" v-model="obj.title"/>
+            <input type="text" placeholder="发布人" v-model="obj.user"/>
+            <input type="text" placeholder="日期" v-model="obj.data"/>
             <button @click="add">新增</button>
         </div>
         <table>
@@ -30,20 +31,20 @@
                     <td>{{item.title}}</td>
                     <td>{{item.user}}</td>
                     <td>{{item.data}}</td>
-                    <td><span>操作</span><span>删除</span></td>
+                    <td><a @click="edit(item)">操作</a><a @click="del(index)">删除</a></td>
                 </tr>
             </tbody>
         </table>
 
-        <div class="layer">
+        <div class="layer" v-show="popShow">
             <div class="mask">
-                <div class="title">编辑</div>
+                <div class="title">编辑<span @click="popShow=false">×</span></div>
                 <div class="content">
-                    <input type="text" placeholder="标题" />
-                    <input type="text" placeholder="发布人" />
-                    <input type="text" placeholder="发布时间" />
-                    <button>更新</button>
-                    <button>取消</button>
+                    <input type="text" placeholder="标题" v-model="editObj.title"/>
+                    <input type="text" placeholder="发布人" v-model="editObj.user" />
+                    <input type="text" placeholder="发布时间" v-model="editObj.data" />
+                    <button @click="update">更新</button>
+                    <button @click="popShow=false">取消</button>
                 </div>
             </div>
         </div>

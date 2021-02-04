@@ -1,0 +1,24 @@
+.layer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left:0;
+    bottom: 0;
+    z-index: 5;
+    background: rgba(0,0,0,0.5);
+}
+
+.mask{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left:0;
+    bottom: 0;
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    z-index: 10;
+    background: #fff;
+    border-radius: 5px;
+    
+}
