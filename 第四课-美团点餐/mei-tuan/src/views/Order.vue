@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h1>好福来美食</h1>
+  <div class="container">
     <div class="layout">
       <!-- 左侧菜单栏 -->
       <div class="menu">
@@ -26,7 +25,7 @@
               <div>口水鸡</div>
               <div>月售1234件 | 好评90%</div>
               <label class="choose-area">
-                  <strong>$10</strong>
+                <strong>$10</strong>
                 <div class="choose">
                   <a>-</a>
                   <span>1</span>
@@ -38,6 +37,7 @@
         </ul>
       </div>
     </div>
+    <div class="submit">共3分，300元</div>
   </div>
 </template>
 
@@ -45,38 +45,61 @@
 export default {
   name: "Order",
   data() {
-    return {};
+    return {
+      cuisine: []
+    };
+  },
+  mounted() {
+    this.getCuisine();
+  },
+  methods: {
+    getCuisine() {
+      //获取全部菜系
+      this.$http
+        .get("/data/cuisine")
+        .then((res) => console.log("res-->>", res))
+        .then((err) => console.log("err-->>", err));
+    },
   },
 };
 </script>
 
 <style scoped>
-*{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
+.container {
+  position: relative;
+  height: 100%;
+}
+
 .layout {
   display: flex;
   width: 100%;
+  height: 100%;
 }
 .menu {
   width: 20%;
+  height: 100%;
   background: #ccc;
-}
-.head-txt{
-    text-align: left;
-
 }
 .main {
   flex: 1;
 }
-li{
-    list-style: none;
+.head-txt {
+  text-align: left;
+  color: red;
 }
-.content{
-    display: flex;
-    align-items: flex-end;
-
+ul {
+  margin-bottom: 20px;
+}
+li {
+  list-style: none;
+}
+.content {
+  display: flex;
+  align-items: flex-end;
 }
 img {
   width: 120px;
@@ -84,8 +107,16 @@ img {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-.choose-area{
-    display: flex;
-    justify-content: space-around;
+.choose-area {
+  display: flex;
+  justify-content: space-around;
+}
+.submit {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 4;
+  background: cornflowerblue;
 }
 </style>
