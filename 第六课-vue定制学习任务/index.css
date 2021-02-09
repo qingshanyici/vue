@@ -1,0 +1,20 @@
+/* 公共样式 */
+.txt-center{
+    text-align: center;
+}
+/* 页面样式 */
+.main{
+    width: 500px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+}
+.content-type{
+    display: flex;
+    justify-content: space-between;
+}
+.content-type div{
+    background-color: #eee;
+}
+li{
+    list-style: none;
+}

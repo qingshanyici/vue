@@ -2,12 +2,12 @@ window.onload = function(){
     new Vue({
         el: "#shopcart",
         data: {
+            input: '',
             items: [
-                {name: '苹果', price: 9, count: 2, url: './程序员1.jpg'},
-                {name: '梨', price: 49, count: 3, url: './程序员3.jpg'},
-                {name: '草莓', price: 90, count: 1, url: './程序员2.jpg'}
-            ],
-            input: ''
+                {name: '苹果', price: 9, count: 2, url: '../程序员1.jpg'},
+                {name: '梨', price: 49, count: 3, url: '../程序员3.jpg'},
+                {name: '草莓', price: 90, count: 1, url: '../程序员2.jpg'}
+            ]
         },
         filters: {
             priceFilter: function(data, n){
@@ -35,7 +35,15 @@ window.onload = function(){
             }
         },
         methods: {
-
+            add: function (index) {
+                console.log("add")
+                this.items[index].count ++ 
+            },
+            del: function (index) {
+                console.log("del")
+                if (this.items[index].count == 0) return
+                this.items[index].count --
+            }
         }
 
     })

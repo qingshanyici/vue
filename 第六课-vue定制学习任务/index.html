@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue定制学习计划</title>
+    <link rel="stylesheet" href='./index.css' />
+</head>
+
+<body>
+    <div id="myapp">
+        <h1 class="txt-center">vue定制学习计划</h1>
+        <h6 class="txt-center">共有几个学习计划，已经完成：3 &nbsp;&nbsp;&nbsp; 未完成： 3</h6>
+        <div class="main">
+            <input type="text" placeholder="按回车确认"/>
+            <button>添加计划</button>
+            <div class="content">
+                <div class="content-type">
+                     <div>所有计划</div>
+                     <div>已经完成</div>
+                     <div>没有完成</div>
+                </div>
+                <ul class="content-list" v-for="(item, index) in items" :key="index">
+                    <li>
+                        <input type="checkbox" :checked="item.checked" v-model="input"/>
+                        <span>{{item.name}}</span>
+                        <button>删除</button>
+                    </li>
+                </ul>
+            </div>
+        </div>       
+        <div>message: {{message}}</div>
+        <div> reverseMsg: {{reverseMsg}}</div>
+        <div>
+            <span>Ask you question:</span>
+            <input type="text" v-model="question"/>
+            <p>{{answer}}</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+</body>
+
+</html>
