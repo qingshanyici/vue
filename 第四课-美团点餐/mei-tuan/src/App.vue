@@ -1,23 +1,23 @@
 <template>
   <div id="app">
+    <tabbar></tabbar>
     <router-view/>
   </div>
 </template>
 
 <script>
+import tabbar from '@/components/Tabbar'
 export default {
-  name: 'App'
+  data(){
+    return {}
+  },
+  methods: {},
+  components: {
+    tabbar,
+  }
 }
 </script>
 
 <style>
-#app {
-  height: 100%;
-  margin-top: 60px;
-  text-align: center;
-  color: #2c3e50;
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
 </style>
