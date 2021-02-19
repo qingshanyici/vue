@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+Vue.use(ElementUI);
+
 Vue.config.productionTip = false
 axios.default.baseUrl = 'http://localhost:3000'
 // axios.default.headers = ['Content-Type'] = 'applictaion/josn'
