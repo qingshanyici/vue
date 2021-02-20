@@ -7,6 +7,8 @@
 
 <script>
 import tabbar from '@/components/Tabbar'
+import Film from './views/Film.vue'
+
 export default {
   data(){
     return {}
@@ -14,6 +16,7 @@ export default {
   methods: {},
   components: {
     tabbar,
+    Film,
   }
 }
 </script>

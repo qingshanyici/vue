@@ -1,11 +1,21 @@
 <template>
   <div>
-    正在热映
+    <!-- 正在热映
     <ul>
       <li v-for="data in datalist" :key="data" @click="handleChangePage(data)">
         {{ data }}
       </li>
-    </ul>
+    </ul> -->
+
+    <div>
+      <slot></slot>
+      <p>这是内容</p>
+      <slot></slot>
+
+    </div>
+
+   
+
   </div>
 </template>
 
@@ -16,6 +26,11 @@ export default {
   data() {
     return {
       datalist: [],
+      filteredTodos: [
+        { id: 1, text: "王花花" },
+        { id: 1, text: "赵明明" },
+        { id: 1, text: "李春春" },
+      ],
     };
   },
   mounted() {
@@ -28,7 +43,7 @@ export default {
         "X-Host": "mall.film-ticket.film.list",
       },
     }).then((res) => {
-      console.log("正在热映-->>",res.data);
+      console.log("正在热映-->>", res.data);
       this.datalist = res.data.data.films;
       this.total = res.data.data.total;
     });
@@ -40,3 +55,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.slot-box {
+  border: 1px solid red;
+}
+</style>

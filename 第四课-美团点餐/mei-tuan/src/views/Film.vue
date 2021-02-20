@@ -2,27 +2,38 @@
   <div>
     <div>轮播</div>
     <div>film-header</div>
+    <div>
+      <ul>
+        <li>
+          <router-link to="/film/nowplaying" tag="li" active-class="myactive">
+            正在热映
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/film/commingsoon" tag="li" active-class="myactive">
+            正在热映
+          </router-link>
+        </li>
+      </ul>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-export default {  
-  mounted() {
-    axios({
-      url: "https://m.maizuo.com/gateway?type=2&cityId=110100&k=5553387",
-      headers: {
-        "X-Client-Info":
-          '{"a":"3000","ch":"1002","v":"5.0.4","e":"15610855429195524981146"}',
-        "X-Host": "mall.cfg.common-banner",
-      },
-    }).then((res) => {
-      console.log("film-->>",res.data);
-    });
+import nowplaying from "./Film/Nowplaying";
+export default {
+  data() {
+    return {};
+  },
+  components: {
+    nowplaying,
   },
 };
 </script>
 
 <style scoped>
+.myactive {
+  color: red;
+}
 </style>
