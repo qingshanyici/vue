@@ -1,21 +1,11 @@
 <template>
   <div>
-    <!-- 正在热映
+    <div>正在热映</div>
     <ul>
-      <li v-for="data in datalist" :key="data" @click="handleChangePage(data)">
-        {{ data }}
+      <li v-for="(data, index) in datalist" :key="index" @click="handleChangePage(data)">
+        {{ data.name }}
       </li>
-    </ul> -->
-
-    <div>
-      <slot></slot>
-      <p>这是内容</p>
-      <slot></slot>
-
-    </div>
-
-   
-
+    </ul>
   </div>
 </template>
 
@@ -39,7 +29,7 @@ export default {
         "https://m.maizuo.com/gateway?cityId=110100&pageNum=1&pageSize=10&type=1&k=4271989",
       headers: {
         "X-Client-Info":
-          '{"a":"3000","ch":"1002","v":"5.0.4","e":"15610855429195524981146"}',
+        '{"a":"3000","ch":"1002","v":"5.0.4","e":"15610855429195524981146"}',
         "X-Host": "mall.film-ticket.film.list",
       },
     }).then((res) => {

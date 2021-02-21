@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "babel-runtime": "^6.26.0",
     "element-ui": "^2.15.0",
     "normalize-wheel": "^1.0.1",
     "resize-observer-polyfill": "^1.5.1",

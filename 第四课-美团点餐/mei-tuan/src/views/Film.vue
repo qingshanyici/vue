@@ -11,7 +11,7 @@
         </li>
         <li>
           <router-link to="/film/commingsoon" tag="li" active-class="myactive">
-            正在热映
+            即将上线
           </router-link>
         </li>
       </ul>
