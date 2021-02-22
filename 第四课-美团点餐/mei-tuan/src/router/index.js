@@ -7,11 +7,23 @@ import Cinema from '@/views/Cinema'
 import Commingsoon from '@/views/Film/Commingsoon'
 import Nowplaying from '@/views/Film/Nowplaying'
 import Detail from '@/views/Film/Detail'
+import ContactList from '@/views/Contact/ContactList'
+import CreateContact from '@/views/Contact/CreateContact'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/contactList',
+      component: ContactList,
+      children: [
+        {
+          path: 'createContact',
+          component: CreateContact
+        },
+      ]
+    },
     {
       path: '/film',
       component: Film,
