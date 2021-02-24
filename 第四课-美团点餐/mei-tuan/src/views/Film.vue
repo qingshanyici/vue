@@ -29,10 +29,11 @@ export default {
   components: {
     nowplaying,
   },
+  methods: {},
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .myactive {
   color: red;
 }
