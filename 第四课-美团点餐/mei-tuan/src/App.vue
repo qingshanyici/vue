@@ -19,7 +19,7 @@ export default {
     tabbar,
     Film,
   },
-  created(){
+  created(){ 
     
   },
   computed: {
