@@ -24,7 +24,6 @@ export default new Vuex.Store({
             state.tabShow = value
         },
         cominglist(state, value){
-            console.log("value-->>", value)
             state.cominglist = value
         }
     },

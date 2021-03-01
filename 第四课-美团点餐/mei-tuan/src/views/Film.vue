@@ -5,14 +5,10 @@
     <div>
       <ul>
         <li>
-          <router-link to="/film/nowplaying" tag="li" active-class="myactive">
-            正在热映
-          </router-link>
+          <router-link to="/film/nowplaying" tag="li" active-class="myactive">正在热映</router-link>
         </li>
         <li>
-          <router-link to="/film/commingsoon" tag="li" active-class="myactive">
-            即将上线
-          </router-link>
+          <router-link to="/film/commingsoon" tag="li" active-class="myactive">即将上线</router-link>
         </li>
       </ul>
     </div>
@@ -27,13 +23,24 @@ export default {
     return {};
   },
   components: {
-    nowplaying,
-  },
+    nowplaying
+  }
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .myactive {
   color: red;
+}
+.box {
+  width: 500px;
+  height: 300px;
+  background: #ccc;
+  &:hover .box1{
+    background: yellowgreen;
+  }
+  #p2:hover~p {
+    font-size: 24px;
+  }
 }
 </style>

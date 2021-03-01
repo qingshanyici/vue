@@ -3,15 +3,23 @@
 </template>
 
 <script>
+import bus from '@/bus/index'
 export default {
     beforeMount(){
-        this.$store.commit("HideTabbar", false)
+        bus.$emit('maizuo', false)
     },
     beforeDestroy(){
-        this.$store.commit("ShowTabbar", true)
-    },
-    mounted(){
-        console.log("detail--->>",this.$route)
+        bus.$emit('maizuo', true)
     }
+
+    // beforeMount(){Í
+    //     this.$store.commit("HideTabbar", false)
+    // },
+    // beforeDestroy(){
+    //     this.$store.commit("ShowTabbar", true)
+    // },
+    // mounted(){
+    //     console.log("detail--->>",this.$route)
+    // }
 }
 </script>
