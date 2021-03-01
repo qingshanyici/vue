@@ -20,6 +20,7 @@ export default {
   mounted(){
     bus.$on('maizuo', (val)=>{
       console.log("val-->>", val)
+      this.isShow = val
     })
   },
   data(){
