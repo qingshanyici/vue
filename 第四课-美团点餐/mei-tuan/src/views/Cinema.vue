@@ -6,7 +6,14 @@
 </template>
 
 <script>
+import Dialog from "./Cinema/dialog";
+import Age from "./Cinema/age";
+
 export default {
+  components: {
+    Dialog,
+    Age,
+  },
   data() {
     return { 
 
@@ -18,15 +25,8 @@ export default {
 };
 </script>
 <style lang="scss">
-/*   */
-.el-input-group__append{
-  border-radius: 0;
+.click {
+  cursor: pointer;
 }
-.el-select {
-    width: 130px;
-  }
-  .input-with-select .el-input-group__prepend {
-    background-color: #fff;
-  }
 </style>
 

@@ -20,7 +20,19 @@
 import nowplaying from "./Film/Nowplaying";
 export default {
   data() {
-    return {};
+    return {
+      contractList: [{ templatename: "1" }, { templatename: "2" }],
+      contractgenerateDto: {},
+      ruleForm: { contractname: "", templatename: "", contractList: [] },
+      rules: {
+        contractname: [
+          { required: true, message: "请输入合同名称", trigger: "blur" },
+        ],
+        templatename: [
+          { required: true, message: "请选择合同模板名称", trigger: "change" },
+        ],
+      },
+    };
   },
   components: {
     nowplaying
